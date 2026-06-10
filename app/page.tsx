@@ -68,18 +68,22 @@ export default function Home() {
         >
           <a
             href="#top"
-            className="rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            className="inline-flex items-center gap-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             aria-label="TechNeeks home"
           >
-            <Image
-              src="/techneeks-logo-crop.jpeg"
-              alt=""
-              width={520}
-              height={280}
-              priority
-              className="h-11 w-32 rounded-2xl border border-slate-200 bg-slate-950 object-cover shadow-sm sm:w-36"
-            />
-            <span className="sr-only">TechNeeks</span>
+            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-slate-950 p-1.5 shadow-sm">
+              <Image
+                src="/techneeks-logo.jpeg"
+                alt=""
+                width={1274}
+                height={1268}
+                priority
+                className="h-full w-full object-contain"
+              />
+            </span>
+            <span className="hidden text-lg font-black tracking-tight sm:inline">
+              TechNeeks
+            </span>
           </a>
           <RegisterButton className="hidden md:inline-flex" />
         </nav>
@@ -128,14 +132,16 @@ export default function Home() {
           </article>
 
           <aside className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_70px_rgba(15,23,42,0.06)] sm:p-6">
-            <Image
-              src="/techneeks-logo-crop.jpeg"
-              alt="TechNeeks logo"
-              width={520}
-              height={280}
-              priority
-              className="h-28 w-full rounded-3xl border border-slate-200 bg-slate-950 object-cover"
-            />
+            <div className="flex min-h-72 items-center justify-center rounded-3xl border border-slate-200 bg-slate-950 p-6 sm:min-h-80">
+              <Image
+                src="/techneeks-logo.jpeg"
+                alt="TechNeeks logo"
+                width={1274}
+                height={1268}
+                priority
+                className="max-h-72 w-full object-contain sm:max-h-80"
+              />
+            </div>
             <div className="rounded-3xl bg-gradient-to-br from-cyan-100 via-white to-purple-100 p-5">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-slate-500">
                 Attendees will
