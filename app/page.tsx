@@ -108,7 +108,7 @@ export default function Home() {
                 <dt className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">
                   Date
                 </dt>
-                <dd className="mt-2 text-xl font-black">Friday 4 July</dd>
+                <dd className="mt-2 text-xl font-black">Saturday July 4th</dd>
               </div>
               <div className="rounded-3xl border border-slate-200 bg-[#fbf7ef] p-5">
                 <dt className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">
@@ -335,7 +335,7 @@ export default function Home() {
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-200">
-                Friday 4 July
+                Saturday July 4th
               </p>
               <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
                 Learn the tools. Meet the people. Build what matters.
