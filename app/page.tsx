@@ -332,7 +332,7 @@ export default function Home() {
                 Saturday July 4th
               </p>
               <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
-                Learn the tools. Meet the people. Build what matters.
+                Learn the tools. Meet your people. Build what matters.
               </h2>
             </div>
             <RegisterButton className="bg-white text-slate-950 hover:bg-cyan-100" />
