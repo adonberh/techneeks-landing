@@ -156,6 +156,25 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-10 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+          <div className="grid gap-5 lg:grid-cols-[0.7fr_1fr] lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-rose-600">
+                About
+              </p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
+                From grassroots hackathon to community.
+              </h2>
+            </div>
+            <p className="text-lg leading-8 text-slate-700">
+              TechNeeks began as a grassroots hackathon in March 2024 and is
+              relaunching as a community for learning, building and opportunity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.72fr_1fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.2em] text-purple-700">
