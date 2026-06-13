@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const ctaHref = "https://forms.gle/REPLACE_ME";
+const ctaHref = "https://forms.gle/BuC42CyLBbkSuaVn9";
 
 const highlights = [
   "Prototype AI agent workflows with Claude",
