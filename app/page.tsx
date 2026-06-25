@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const ctaHref = "https://luma.com/wra8zfqw";
+const whatsappHref = "https://chat.whatsapp.com/CXGfCgOqpl76ZvbP64aNsm";
 
 const highlights = [
   "Prototype AI agent workflows with Claude",
@@ -319,6 +320,32 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-10 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">
+                Join the community
+              </p>
+              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
+                Stay close to what TechNeeks is building.
+              </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
+                Join the WhatsApp community for event updates, opportunities
+                and conversations with people learning, building and exploring
+                tech together.
+              </p>
+            </div>
+            <a
+              href={whatsappHref}
+              className="inline-flex items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-emerald-600/15 transition hover:-translate-y-0.5 hover:bg-[#1ebe5d] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+            >
+              Join WhatsApp community
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1fr_0.9fr]">
           <article className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">
@@ -359,7 +386,15 @@ export default function Home() {
         </div>
         <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-1 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-black text-slate-950">TechNeeks</p>
-          <p>For the community, by the community.</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <p>For the community, by the community.</p>
+            <a
+              href={whatsappHref}
+              className="font-black text-slate-950 underline decoration-cyan-300 decoration-2 underline-offset-4 transition hover:text-purple-700"
+            >
+              WhatsApp community
+            </a>
+          </div>
         </footer>
       </section>
     </main>
