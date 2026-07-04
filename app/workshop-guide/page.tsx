@@ -12,8 +12,17 @@ export const metadata: Metadata = {
 
 const prep = [
   "A laptop and charger",
-  "Basic programming confidence",
-  "A willingness to build hands-on",
+  "Basic Python and code-reading confidence",
+  "Comfort using a terminal and installing packages",
+];
+
+const workflow = [
+  "Add a job URL or paste a job description",
+  "Analyse the role and extract its requirements",
+  "Compare the role against a candidate profile",
+  "Generate tailored application materials",
+  "Update the application tracker",
+  "Suggest the next action",
 ];
 
 export default function WorkshopGuidePage() {
@@ -108,38 +117,73 @@ export default function WorkshopGuidePage() {
           <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
             Live technical guide
           </p>
-          <div className="mt-3 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div>
-              <h2 className="text-3xl font-black sm:text-5xl">
-                Build along with the session.
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
-                This guide is live and may continue to be updated during and
-                after the workshop.
-              </p>
-            </div>
-            <a
-              href={notionGuideHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-black text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-            >
-              Open guide in Notion
-            </a>
+          <div className="mt-3">
+            <h2 className="text-3xl font-black sm:text-5xl">
+              Build along with the session.
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
+              Start with the workflow below, then open the live Notion guide
+              for setup instructions, code and stretch goals.
+            </p>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-white/15 bg-white shadow-[0_24px_90px_rgba(34,211,238,0.1)]">
-            <iframe
-              src={notionGuideHref}
-              title="TechNeeks AI Agents Workshop technical guide"
-              className="h-[78vh] min-h-[42rem] w-full bg-white"
-              loading="eager"
-            />
+          <div className="mt-8 grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+            <article className="rounded-2xl border border-fuchsia-300/20 bg-fuchsia-300/[0.06] p-6 sm:p-8">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-fuchsia-200">
+                Workshop goal
+              </p>
+              <h3 className="mt-4 text-2xl font-black">
+                Build a practical agentic workflow for managing job
+                applications.
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                A chatbot gives a response. This agent uses tools, state and
+                orchestration to move an application towards a goal.
+              </p>
+            </article>
+
+            <ol
+              aria-label="Job application agent workflow"
+              className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-8"
+            >
+              {workflow.map((step, index) => (
+                <li key={step} className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-300/10 text-xs font-black text-cyan-200">
+                      {index + 1}
+                    </span>
+                    {index < workflow.length - 1 && (
+                      <span className="my-1 h-6 w-px bg-gradient-to-b from-cyan-300/60 to-fuchsia-300/40" />
+                    )}
+                  </div>
+                  <p className="pt-1 text-sm font-bold leading-6 text-white sm:text-base">
+                    {step}
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
-          <p className="mt-4 text-center text-xs leading-5 text-slate-500">
-            If the embedded guide does not load, use the Open guide in Notion
-            button above.
-          </p>
+
+          <div className="mt-6 rounded-2xl bg-gradient-to-br from-cyan-300 via-fuchsia-400 to-violet-500 p-px shadow-[0_24px_90px_rgba(34,211,238,0.12)]">
+            <div className="flex flex-col gap-6 rounded-[calc(1rem-1px)] bg-[#0c1829] p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div>
+                <h3 className="text-2xl font-black">Ready to start building?</h3>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+                  The live guide includes the architecture, setup steps, code
+                  walkthrough and stretch goals. It opens in a new tab so you
+                  can keep this overview beside it.
+                </p>
+              </div>
+              <a
+                href={notionGuideHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+              >
+                Open the live Notion guide
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
