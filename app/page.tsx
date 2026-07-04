@@ -1,290 +1,224 @@
 import Image from "next/image";
 
-const ctaHref = "https://luma.com/wra8zfqw";
+const guideHref =
+  "https://olive-sage-c57.notion.site/TechNeeks-39286a2745028086a4b2e5153febde24";
+const lumaHref = "https://luma.com/wra8zfqw";
 const whatsappHref = "https://chat.whatsapp.com/CXGfCgOqpl76ZvbP64aNsm";
 
-const highlights = [
-  "Prototype AI agent workflows with Claude",
-  "Hear practical advice on breaking into tech",
-  "Meet curious people from different starting points",
+const todayDetails = [
+  {
+    label: "Today's schedule",
+    lines: ["11am-2pm - AI Agents Workshop", "3pm onwards - Panel + Networking"],
+    accent: "border-cyan-400/50",
+  },
+  {
+    label: "Venue",
+    lines: ["The Leather Market", "London Bridge / SE1"],
+    accent: "border-fuchsia-400/50",
+  },
+  {
+    label: "Bring",
+    lines: ["Laptop for the workshop"],
+    accent: "border-violet-400/50",
+  },
+  {
+    label: "Guide",
+    lines: ["Live Notion guide available"],
+    accent: "border-cyan-400/50",
+  },
+];
+
+const workflow = [
+  "Job URL or description",
+  "Analyse role",
+  "Compare candidate fit",
+  "Generate application pack",
+  "Track application stage",
+  "Suggest next action",
+];
+
+const explainers = [
+  {
+    title: "Chatbot",
+    copy: "Responds to one message. Example: write me a cover letter.",
+    colour: "bg-cyan-400",
+  },
+  {
+    title: "Agent",
+    copy: "Uses tools, state and orchestration to work towards a goal. Example: manage this job application.",
+    colour: "bg-fuchsia-400",
+  },
+  {
+    title: "Operating System",
+    copy: "Acts as a workflow hub over time. Example: track applications, interviews, reminders and next actions.",
+    colour: "bg-violet-400",
+  },
 ];
 
 const schedule = [
   {
-    time: "Morning",
+    time: "11am-2pm",
     title: "AI Agents Workshop",
-    detail:
-      "Learn how AI agents work and use Claude to prototype simple, useful workflows.",
-    accent: "bg-cyan-100 text-cyan-900",
+    detail: "A hands-on build using the live technical guide.",
+    colour: "text-cyan-300",
   },
   {
-    time: "Afternoon",
-    title: "Breaking Into Tech Panel",
-    detail:
-      "Hear honest advice on getting into tech in 2026, building a portfolio and finding your edge.",
-    accent: "bg-purple-100 text-purple-900",
+    time: "1:30pm-3pm",
+    title: "Pizza / break",
+    detail: "Refuel, compare notes and meet the room.",
+    colour: "text-fuchsia-300",
   },
   {
-    time: "Evening",
-    title: "Networking",
-    detail:
-      "Meet builders, creatives, founders, career switchers and people exploring technology from different starting points.",
-    accent: "bg-amber-100 text-amber-950",
+    time: "3pm onwards",
+    title: "AI & Careers Panel + Networking",
+    detail: "Practical career insight, honest conversation and new connections.",
+    colour: "text-violet-300",
   },
 ];
 
-const audiences = [
-  "Students",
-  "Graduates",
-  "Career switchers",
-  "Early-career professionals",
-  "Creatives",
-  "Founders",
-  "Curious builders",
-  "AI and social impact explorers",
-];
+function GuideButton({
+  className = "",
+  children = "Open technical guide",
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <a
+      href={guideHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-center text-sm font-black text-slate-950 shadow-[0_0_28px_rgba(103,232,249,0.2)] transition hover:-translate-y-0.5 hover:bg-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-950 ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
 
 function RegisterButton({ className = "" }: { className?: string }) {
   return (
     <a
-      href={ctaHref}
-      className={`inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-black text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 ${className}`}
+      href={lumaHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-center text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-fuchsia-300/60 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-300 focus:ring-offset-2 focus:ring-offset-slate-950 ${className}`}
     >
-      Register interest
+      Register on Luma
     </a>
+  );
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-300">
+      {children}
+    </p>
   );
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fbf7ef] text-slate-950">
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-[#fbf7ef]/92 px-5 py-3 shadow-[0_-12px_30px_rgba(15,23,42,0.08)] backdrop-blur md:hidden">
-        <RegisterButton className="w-full" />
+    <main className="min-h-screen overflow-hidden bg-[#07101d] text-white">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#07101d]/95 px-4 py-3 backdrop-blur md:hidden">
+        <GuideButton className="w-full" />
       </div>
 
-      <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-[#fbf7ef]/88 px-5 backdrop-blur sm:px-8 lg:px-12">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#07101d]/90 px-5 backdrop-blur-xl sm:px-8 lg:px-12">
         <nav
-          className="mx-auto flex max-w-6xl items-center justify-between gap-4 py-4"
-          aria-label="Primary"
+          aria-label="Primary navigation"
+          className="mx-auto flex max-w-6xl items-center justify-between gap-4 py-3"
         >
           <a
             href="#top"
-            className="inline-flex items-center gap-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             aria-label="TechNeeks home"
+            className="inline-flex items-center gap-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-slate-950 p-1.5 shadow-sm">
+            <span className="flex h-12 w-24 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-[#07111f] p-2">
               <Image
-                src="/techneeks-logo.jpeg"
+                src="/techneeks-logo-crop.jpeg"
                 alt=""
-                width={1274}
-                height={1268}
+                width={424}
+                height={228}
                 priority
                 className="h-full w-full object-contain"
               />
             </span>
-            <span className="hidden text-lg font-black tracking-tight sm:inline">
-              TechNeeks
-            </span>
+            <span className="hidden text-sm font-black sm:inline">TechNeeks</span>
           </a>
-          <RegisterButton className="hidden md:inline-flex" />
+          <div className="flex items-center gap-2">
+            <a
+              href={guideHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden rounded-full px-4 py-2 text-sm font-bold text-cyan-200 transition hover:bg-white/5 sm:inline-flex"
+            >
+              Workshop guide
+            </a>
+            <RegisterButton className="min-h-10 px-4 py-2" />
+          </div>
         </nav>
       </header>
 
-      <section id="top" className="px-5 pb-14 pt-8 sm:px-8 sm:pb-20 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
-          <article className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)] sm:p-8 lg:p-10">
-            <p className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-black text-cyan-900">
-              London community tech event
-            </p>
-            <h1 className="mt-7 max-w-4xl text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-7xl">
-              Building with AI, Breaking into Tech
-            </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-8 text-slate-700">
-              A community tech event for people curious about AI, careers and
-              building useful things.
-            </p>
-
-            <dl className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-3xl border border-slate-200 bg-[#fbf7ef] p-5">
-                <dt className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">
-                  Date
-                </dt>
-                <dd className="mt-2 text-xl font-black">Saturday July 4th</dd>
-              </div>
-              <div className="rounded-3xl border border-slate-200 bg-[#fbf7ef] p-5">
-                <dt className="text-sm font-black uppercase tracking-[0.16em] text-slate-500">
-                  Venue
-                </dt>
-                <dd className="mt-2 text-xl font-black">
-                  The Leather Market, London SE1
-                </dd>
-              </div>
-            </dl>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <RegisterButton />
-            </div>
-          </article>
-
-          <aside className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_20px_70px_rgba(15,23,42,0.06)] sm:p-6">
-            <div className="flex min-h-72 items-center justify-center rounded-3xl border border-slate-200 bg-slate-950 p-6 sm:min-h-80">
-              <Image
-                src="/techneeks-logo.jpeg"
-                alt="TechNeeks logo"
-                width={1274}
-                height={1268}
-                priority
-                className="max-h-72 w-full object-contain sm:max-h-80"
-              />
-            </div>
-            <div className="rounded-3xl bg-gradient-to-br from-cyan-100 via-white to-purple-100 p-5">
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-slate-500">
-                Attendees will
-              </p>
-              <ul className="mt-4 grid gap-3">
-                {highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-2xl border border-white/80 bg-white/80 px-4 py-3 text-base font-bold shadow-sm"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-          <div className="grid gap-5 lg:grid-cols-[0.7fr_1fr] lg:items-center">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-rose-600">
-                About
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-                From grassroots hackathon to community.
-              </h2>
-            </div>
-            <p className="text-lg leading-8 text-slate-700">
-              TechNeeks began as a grassroots hackathon in March 2024 and is
-              relaunching as a community for learning, building and opportunity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.72fr_1fr]">
+      <section id="top" className="relative px-5 pb-10 pt-10 sm:px-8 sm:pb-14 sm:pt-14 lg:px-12 lg:pt-16">
+        <div aria-hidden="true" className="absolute left-1/2 top-0 h-72 w-[46rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.13),rgba(217,70,239,0.05)_48%,transparent_72%)] blur-3xl" />
+        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_20rem] lg:items-center">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-purple-700">
-              What is TechNeeks?
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              A third place for learning, building and connection.
-            </h2>
-          </div>
-          <div className="space-y-4 rounded-[2rem] border border-slate-200 bg-white p-6 text-lg leading-8 text-slate-700 shadow-sm sm:p-8">
-            <p>
-              TechNeeks is a community-led tech collective creating third places
-              for people interested in technology, AI and social impact.
-            </p>
-            <p>
-              We bring together builders, creatives, career switchers, students
-              and early-career professionals to learn, connect and work on
-              practical ideas for real communities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1fr_0.82fr]">
-          <article className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-rose-600">
-              Why this exists
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              Technology shapes our work, culture, businesses and communities.
-            </h2>
-          </article>
-          <article className="space-y-4 rounded-[2rem] border border-slate-200 bg-[#fff5f2] p-6 text-lg leading-8 text-slate-700 shadow-sm sm:p-8">
-            <p>
-              But too often, the people most affected by technology are not the
-              ones building it.
-            </p>
-            <p className="text-2xl font-black text-slate-950">
-              TechNeeks exists to change that.
-            </p>
-            <p>
-              We create spaces where people from underrepresented communities
-              can learn the tools, build confidence, meet others and solve
-              problems around them.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">
-                What to expect
-              </p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
-                A practical day for learning, career insight and connection.
-              </h2>
+            <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-300/30 bg-fuchsia-300/10 px-4 py-2 text-sm font-bold text-fuchsia-200">
+              <span className="h-2 w-2 rounded-full bg-fuchsia-300 shadow-[0_0_12px_rgba(244,114,182,0.9)]" />
+              Happening today in London
             </div>
-            <RegisterButton className="hidden md:inline-flex" />
+            <p className="mt-7 text-sm font-black uppercase tracking-[0.2em] text-cyan-300">
+              TechNeeks presents
+            </p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-[1.02] sm:text-6xl lg:text-7xl">
+              Building with AI,
+              <span className="block bg-gradient-to-r from-cyan-300 via-white to-fuchsia-300 bg-clip-text text-transparent">
+                Breaking into Tech
+              </span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              A community tech event for people curious about AI, software
+              careers and building useful things.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold text-slate-200 sm:text-base">
+              <p>Saturday 4 July</p>
+              <p>The Leather Market</p>
+              <p>London Bridge / SE1</p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <GuideButton className="sm:min-w-52">Open workshop guide</GuideButton>
+              <RegisterButton className="sm:min-w-44" />
+            </div>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {highlights.map((item) => (
-              <article
-                key={item}
-                className="rounded-3xl border border-slate-200 bg-[#fbf7ef] p-5"
-              >
-                <p className="text-lg font-black leading-7">{item}</p>
-              </article>
-            ))}
+
+          <div className="mx-auto hidden w-full max-w-xs lg:block">
+            <div className="rounded-[1.75rem] bg-gradient-to-br from-cyan-300 via-fuchsia-400 to-violet-500 p-px shadow-[0_24px_90px_rgba(34,211,238,0.12)]">
+              <div className="rounded-[calc(1.75rem-1px)] bg-[#0b1627] p-6">
+                <Image
+                  src="/techneeks-logo.jpeg"
+                  alt="TechNeeks"
+                  width={1274}
+                  height={1268}
+                  priority
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="schedule" className="px-5 py-10 sm:px-8 lg:px-12">
+      <section aria-labelledby="today-heading" className="px-5 py-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-purple-700">
-                Schedule
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-                Three moments, one community day.
-              </h2>
-            </div>
-          </div>
-
-          <div className="grid gap-4">
-            {schedule.map((item) => (
-              <article
-                key={item.title}
-                className="grid gap-5 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg sm:p-6 md:grid-cols-[11rem_1fr]"
-              >
-                <div>
-                  <p
-                    className={`inline-flex rounded-full px-4 py-2 text-sm font-black ${item.accent}`}
-                  >
-                    {item.time}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
-                    {item.detail}
-                  </p>
+          <h2 id="today-heading" className="sr-only">Today at TechNeeks</h2>
+          <div className="grid overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
+            {todayDetails.map((item) => (
+              <article key={item.label} className={`border-b p-5 sm:border-r lg:border-b-0 ${item.accent}`}>
+                <h3 className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">
+                  {item.label}
+                </h3>
+                <div className="mt-3 space-y-1 text-sm font-bold leading-6 text-white">
+                  {item.lines.map((line) => <p key={line}>{line}</p>)}
                 </div>
               </article>
             ))}
@@ -292,108 +226,134 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[0.78fr_1fr] lg:items-start">
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-rose-600">
-              Who should come?
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              You do not need to have it all figured out.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              This is for anyone curious about AI, tech and social impact. Bring
-              questions, ideas and a laptop if you have one.
+      <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-6xl rounded-[2rem] bg-gradient-to-br from-cyan-300 via-fuchsia-400 to-violet-500 p-px shadow-[0_24px_90px_rgba(34,211,238,0.12)]">
+          <div className="grid gap-8 rounded-[calc(2rem-1px)] bg-[#0c1829] p-6 sm:p-9 lg:grid-cols-[1fr_auto] lg:items-center lg:p-12">
+            <div>
+              <SectionLabel>Today&apos;s Workshop Guide</SectionLabel>
+              <h2 className="mt-3 text-3xl font-black sm:text-5xl">Build with us, step by step.</h2>
+              <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+                Joining the AI Agents Workshop? Use the live technical guide below. It includes the architecture, setup steps, code walkthrough and stretch goals for building an AI Job Application Agent.
+              </p>
+              <p className="mt-4 text-sm leading-6 text-slate-400">
+                The guide is live and may continue to be updated before and after the session.
+              </p>
+            </div>
+            <GuideButton className="w-full lg:w-auto" />
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div>
+            <SectionLabel>What we&apos;re building</SectionLabel>
+            <h2 className="mt-3 text-3xl font-black sm:text-5xl">An AI agent for the job application journey.</h2>
+            <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              In the workshop, we&apos;ll build a practical AI agent workflow that helps manage job applications. The agent accepts a job URL or pasted job description, analyses the role, compares it against a candidate profile, generates application materials and updates an application tracker.
             </p>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2" aria-label="Audience list">
-            {audiences.map((person) => (
-              <li
-                key={person}
-                className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-base font-black shadow-sm"
-              >
-                {person}
+          <ol className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 sm:p-7" aria-label="AI agent workflow">
+            {workflow.map((step, index) => (
+              <li key={step} className="flex gap-4">
+                <div className="flex flex-col items-center">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-300/10 text-sm font-black text-cyan-200">{index + 1}</span>
+                  {index < workflow.length - 1 && <span className="my-1 h-7 w-px bg-gradient-to-b from-cyan-300/60 to-fuchsia-300/40" />}
+                </div>
+                <p className="pt-1.5 text-base font-bold text-white sm:text-lg">{step}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">
-                Join the community
-              </p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
-                Stay close to what TechNeeks is building.
-              </h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-700">
-                Join the WhatsApp community for event updates, opportunities
-                and conversations with people learning, building and exploring
-                tech together.
-              </p>
-            </div>
-            <a
-              href={whatsappHref}
-              className="inline-flex items-center justify-center rounded-full bg-[#25d366] px-6 py-3 text-sm font-black text-slate-950 shadow-lg shadow-emerald-600/15 transition hover:-translate-y-0.5 hover:bg-[#1ebe5d] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-            >
-              Join WhatsApp community
-            </a>
+      <section className="border-y border-white/10 bg-white/[0.025] px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-6xl">
+          <SectionLabel>Chatbot vs Agent</SectionLabel>
+          <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <h2 className="max-w-3xl text-3xl font-black sm:text-5xl">A chatbot gives a response. An agentic workflow manages a process.</h2>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {explainers.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-white/10 bg-[#0c1829] p-6">
+                <span aria-hidden="true" className={`block h-1.5 w-12 rounded-full ${item.colour}`} />
+                <h3 className="mt-5 text-xl font-black">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{item.copy}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1fr_0.9fr]">
-          <article className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">
-              Venue
-            </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              The Leather Market
-            </h2>
-            <address className="mt-5 not-italic text-lg leading-8 text-slate-700">
-              11-13 Weston St
-              <br />
-              London SE1 3ER
-            </address>
-            <p className="mt-5 text-lg font-bold text-slate-950">
-              Close to London Bridge.
+      <section id="schedule" className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-6xl">
+          <SectionLabel>Today&apos;s schedule</SectionLabel>
+          <h2 className="mt-3 text-3xl font-black sm:text-5xl">Plan your day.</h2>
+          <div className="mt-8 grid gap-4">
+            {schedule.map((item) => (
+              <article key={item.title} className="grid gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:grid-cols-[10rem_1fr] sm:items-center sm:p-6">
+                <p className={`text-lg font-black ${item.colour}`}>{item.time}</p>
+                <div>
+                  <h3 className="text-xl font-black">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-400">{item.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto grid max-w-6xl gap-5 lg:grid-cols-2">
+          <article className="rounded-[2rem] border border-white/10 bg-[#0c1829] p-6 sm:p-8">
+            <SectionLabel>Who it&apos;s for</SectionLabel>
+            <h2 className="mt-3 text-3xl font-black sm:text-4xl">Come ready to learn and connect.</h2>
+            <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              The workshop is best for people with some programming experience or willingness to build hands-on. The panel and networking are open to everyone interested in tech, AI, careers and community.
             </p>
           </article>
-          <div
-            aria-hidden="true"
-            className="min-h-72 rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,rgba(165,243,252,0.85),rgba(255,216,204,0.88),rgba(233,213,255,0.85)),linear-gradient(45deg,rgba(15,23,42,0.08)_25%,transparent_25%),linear-gradient(-45deg,rgba(15,23,42,0.08)_25%,transparent_25%),linear-gradient(45deg,transparent_75%,rgba(15,23,42,0.08)_75%),linear-gradient(-45deg,transparent_75%,rgba(15,23,42,0.08)_75%)] bg-[length:auto,42px_42px,42px_42px,42px_42px,42px_42px] bg-[position:center,0_0,0_21px,21px_-21px,-21px_0] shadow-sm"
-          />
+          <article className="rounded-[2rem] border border-fuchsia-300/20 bg-fuchsia-300/[0.06] p-6 sm:p-8">
+            <SectionLabel>About TechNeeks</SectionLabel>
+            <h2 className="mt-3 text-3xl font-black sm:text-4xl">Community-led. London-built.</h2>
+            <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              TechNeeks began as a grassroots hackathon in March 2024 and is relaunching as a community for learning, building and opportunity.
+            </p>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex font-black text-cyan-200 underline decoration-cyan-400/60 decoration-2 underline-offset-4 hover:text-white">
+              Join the WhatsApp community
+            </a>
+          </article>
         </div>
       </section>
 
-      <section className="px-5 pb-24 pt-10 sm:px-8 md:pb-10 lg:px-12">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate-200 bg-slate-950 p-6 text-white shadow-[0_20px_70px_rgba(15,23,42,0.14)] sm:p-8 lg:p-10">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-200">
-                Saturday July 4th
-              </p>
-              <h2 className="mt-3 max-w-3xl text-3xl font-black tracking-tight sm:text-5xl">
-                Learn the tools. Meet your people. Build what matters.
-              </h2>
+      <section className="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-center">
+          <div>
+            <SectionLabel>Event poster</SectionLabel>
+            <h2 className="mt-3 text-3xl font-black sm:text-5xl">TechNeeks, in full colour.</h2>
+            <p className="mt-5 max-w-md text-base leading-7 text-slate-300">Saturday 4 July at The Leather Market, 11-13 Weston St, London SE1 3ER.</p>
+          </div>
+          <div className="rounded-[2rem] bg-gradient-to-br from-fuchsia-400 via-violet-500 to-cyan-300 p-px">
+            <div className="flex items-center justify-center rounded-[calc(2rem-1px)] bg-[#07111f] p-5 sm:p-10">
+              <Image src="/techneeks-logo.jpeg" alt="TechNeeks event poster artwork" width={1274} height={1268} className="h-auto max-h-[38rem] w-full object-contain" />
             </div>
-            <RegisterButton className="bg-white text-slate-950 hover:bg-cyan-100" />
           </div>
         </div>
-        <footer className="mx-auto flex max-w-6xl flex-col gap-2 px-1 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-black text-slate-950">TechNeeks</p>
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-            <p>For the community, by the community.</p>
-            <a
-              href={whatsappHref}
-              className="font-black text-slate-950 underline decoration-cyan-300 decoration-2 underline-offset-4 transition hover:text-purple-700"
-            >
-              WhatsApp community
-            </a>
+      </section>
+
+      <section className="px-5 pb-28 pt-12 sm:px-8 sm:py-16 lg:px-12">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-cyan-300/25 bg-[linear-gradient(135deg,rgba(34,211,238,0.12),rgba(217,70,239,0.09))] p-6 text-center sm:p-10 lg:p-14">
+          <SectionLabel>Coming to the workshop?</SectionLabel>
+          <h2 className="mt-3 text-3xl font-black sm:text-5xl">Your build starts here.</h2>
+          <GuideButton className="mt-7 w-full sm:w-auto" />
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-6 text-slate-300 sm:text-base">
+            Coming for the panel? Join us from 3pm for AI, careers and networking.
+          </p>
+        </div>
+        <footer className="mx-auto flex max-w-6xl flex-col gap-4 py-8 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <p><span className="font-black text-white">TechNeeks</span> - For the community, by the community.</p>
+          <div className="flex gap-5">
+            <a href={lumaHref} target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-cyan-200">Luma</a>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="font-bold text-white hover:text-cyan-200">WhatsApp</a>
           </div>
         </footer>
       </section>

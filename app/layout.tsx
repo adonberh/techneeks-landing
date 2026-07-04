@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "TechNeeks: Building with AI, Breaking into Tech",
   description:
-    "A community-led London tech event for learning AI, building with purpose, and finding your route into tech.",
+    "Today's London community tech event for AI, software careers and building useful things.",
 };
 
 export default function RootLayout({
