@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-const guideHref =
-  "https://olive-sage-c57.notion.site/TechNeeks-39286a2745028086a4b2e5153febde24";
+const guideHref = "/workshop-guide";
 const lumaHref = "https://luma.com/wra8zfqw";
 const whatsappHref = "https://chat.whatsapp.com/CXGfCgOqpl76ZvbP64aNsm";
 
