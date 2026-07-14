@@ -7,7 +7,7 @@ const whatsappHref = "https://chat.whatsapp.com/CXGfCgOqpl76ZvbP64aNsm";
 const lumaHref = "https://luma.com/user/usr-yHcvhVwc127L7DE";
 const guideHref = "/workshop-guide";
 const buildHref = "/#build-001";
-const repoHref = "#";
+const repoHref = "https://github.com/adonberh/techneeks-job-agent";
 
 export const metadata: Metadata = {
   title: "AGENT TALK — July 2026 | TechNeeks",

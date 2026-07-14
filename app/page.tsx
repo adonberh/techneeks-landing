@@ -5,7 +5,7 @@ const instagramHref = "https://instagram.com/techneeksldn";
 const whatsappHref = "https://chat.whatsapp.com/CXGfCgOqpl76ZvbP64aNsm";
 const lumaHref = "https://luma.com/user/usr-yHcvhVwc127L7DE";
 const agentTalkHref = "/agent-talk";
-const repoHref = "#";
+const repoHref = "https://github.com/adonberh/techneeks-job-agent";
 const guideHref = "/workshop-guide";
 
 const heroImages = [
