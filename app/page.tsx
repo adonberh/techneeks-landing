@@ -230,6 +230,34 @@ export default function Home() {
               we&apos;re opening it up. Fork the repo, build your own version and
               make it more useful.
             </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
+                <h3 className="text-sm font-black text-[#75e6ef]">
+                  Best build wins
+                </h3>
+                <ul className="mt-3 space-y-2 text-sm font-bold leading-5 text-white/80">
+                  <li>🏆 £30 Amazon voucher</li>
+                  <li>📣 TechNeeks feature</li>
+                  <li>🎤 Chance to demo at a future session</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
+                <h3 className="text-sm font-black text-[#ff8fb4]">Deadline</h3>
+                <p className="mt-3 text-sm font-bold leading-5 text-white/80">
+                  Sunday 26 July, 11:59pm
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
+                <h3 className="text-sm font-black text-[#b7a8ff]">How to enter</h3>
+                <p className="mt-3 text-sm font-bold leading-5 text-white/80">
+                  Fork the repo, raise a PR, or build your own version.
+                </p>
+                <p className="mt-3 text-sm font-bold leading-5 text-white/80">
+                  Send your PR or forked repo link, plus a short write-up
+                  explaining what you changed and why.
+                </p>
+              </div>
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ExternalButton href={repoHref} className="bg-white text-[#101820]">
                 View the repo
