@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -14,12 +14,40 @@ html {
 
 body {
   margin: 0;
-  background: #07101d;
+  background: #f7f3ec;
   font-family: Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #67e8f9;
-  color: #07101d;
+  background: #75e6ef;
+  color: #101820;
+}
+
+.techneeks-carousel {
+  animation: techneeks-scroll 42s linear infinite;
+}
+
+.techneeks-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes techneeks-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.375rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .techneeks-carousel {
+    animation: none;
+  }
 }

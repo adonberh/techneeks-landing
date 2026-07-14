@@ -35,7 +35,7 @@ export default function WorkshopGuidePage() {
         >
           <a
             href="/"
-            aria-label="Back to TechNeeks event page"
+            aria-label="Back to TechNeeks home"
             className="inline-flex items-center gap-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
             <span className="flex h-12 w-24 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-[#07111f] p-2">
@@ -53,10 +53,10 @@ export default function WorkshopGuidePage() {
             </span>
           </a>
           <a
-            href="/"
+            href="/agent-talk"
             className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-black text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300"
           >
-            Event page
+            AGENT TALK
           </a>
         </nav>
       </header>
